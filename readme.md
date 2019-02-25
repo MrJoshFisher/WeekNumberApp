@@ -2,7 +2,7 @@
 
 [![N|Solid](https://fisherinc.co.uk/wp-content/uploads/weeknumber.png)](https://nodesource.com/products/nsolid)
 
-A simple app to show the weeknumber in the menu bar.
+A simple app to show the week number in the menu bar.
 
 ##### Features!
 
