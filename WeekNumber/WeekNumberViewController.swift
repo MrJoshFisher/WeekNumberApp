@@ -21,8 +21,18 @@ class WeekNumberViewController: NSViewController {
 	let defaults = UserDefaults.standard
 	
 
+	@IBOutlet var taskInputTxt: NSTextField!
+	@IBOutlet var taskAddBtn: NSButton!
+	
+	
+	@IBOutlet var taskListTable: NSTableView!
+	
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
+		
+		
+		
 		
 		let date = Date()
 		let calendar = Calendar.current
@@ -34,84 +44,30 @@ class WeekNumberViewController: NSViewController {
 		
 		let btnText = String(format: "Week #%02d", weekOfYear)
 		weekNumberText.stringValue = btnText
-		weekRangeText.stringValue = "coming soon..."
 		
-		//print(dayRangeOf(weekOfMonth: weekOfMonth, year: year, month: month))
-		//let dates = dayRangeOf(weekOfMonth: weekOfMonth, year: year, month: month)
-		//let rangeText = String(format: "%02d --> %02d", startDate, endDate)
-		//weekRangeText.stringValue = rangeText
+		
+		let startWeek = Date().startOfWeek
+		let endWeek = Date().endOfWeek
+		
+		let startday = Calendar.current.component(.day, from: startWeek ?? date)
+		let finishday = Calendar.current.component(.day, from: endWeek ?? date)
+		let startmonth = Calendar.current.component(.month, from: startWeek ?? date)
+		let finishmonth = Calendar.current.component(.month, from: endWeek ?? date)
+		let startyear = Calendar.current.component(.year, from: startWeek ?? date)
+		let finishyear = Calendar.current.component(.year, from: endWeek ?? date)
+		
+		print(startWeek ?? "not found start date")
+		print(endWeek ?? "not found end date")
+		
+		weekRangeText.stringValue = String(format: "%02d/%02d/%02d --> %02d/%02d/%02d", startday,startmonth,startyear,finishday,finishmonth,finishyear)
 
     }
 	
 	
-	
-	@IBAction func showFullDate(_ sender: NSButton) {
-		switch sender.state {
-			case .on:
-				print("1on")
-				defaults.set(true, forKey: defaultsKeys.showFullDateKey)
-			case .off:
-				print("1off")
-				defaults.set(false, forKey: defaultsKeys.showFullDateKey)
-			case .mixed:
-				print("1mixed")
-			default: break
-		}
-	}
-	
-	@IBAction func time24(_ sender: NSButton) {
-		switch sender.state {
-			case .on:
-				print("2on")
-				defaults.set(true, forKey: defaultsKeys.time24Key)
-			case .off:
-				print("2off")
-				defaults.set(false, forKey: defaultsKeys.time24Key)
-			case .mixed:
-				print("2mixed")
-			default: break
-		}
-	}
-	
-	@IBAction func showTime(_ sender: NSButton) {
-		switch sender.state {
-			case .on:
-				print("3on")
-				defaults.set(true, forKey: defaultsKeys.showTimeKey)
-			case .off:
-				print("3off")
-				defaults.set(false, forKey: defaultsKeys.showTimeKey)
-			case .mixed:
-				print("3mixed")
-			default: break
-		}
-	}
 	@IBAction func quitApp(_ sender: Any) {
 		NSApplication.shared.terminate(self)
 	}
-	/*
-	func dayRangeOf(weekOfMonth: Int, year: Int, month: Int) -> Range<Date>? {
-		let calendar = Calendar.current
-		guard let startOfMonth = calendar.date(from: DateComponents(year:year, month:month)) else { return nil }
-		var startDate = Date()
-		if weekOfMonth == 1 {
-			var interval = TimeInterval()
-			guard calendar.dateInterval(of: .weekOfMonth, start: &startDate, interval: &interval, for: startOfMonth) else { return nil }
-		} else {
-			let nextComponents = DateComponents(year: year, month: month, weekOfMonth: weekOfMonth)
-			guard let weekStartDate = calendar.nextDate(after: startOfMonth, matching: nextComponents, matchingPolicy: .nextTime) else {
-				return nil
-			}
-			startDate = weekStartDate
-		}
-		let endComponents = DateComponents(day:7, second: -1)
-		let endDate = calendar.date(byAdding: endComponents, to: startDate)!
-		return startDate..<endDate
-	}
-	*/
-	
 
-    
 }
 extension WeekNumberViewController {
 	// MARK: Storyboard instantiation
@@ -125,6 +81,20 @@ extension WeekNumberViewController {
 			fatalError("Why cant i find WeekNumberViewController? - Check Main.storyboard")
 		}
 		return viewcontroller
+	}
+}
+
+extension Date {
+	var startOfWeek: Date? {
+		let gregorian = Calendar(identifier: .gregorian)
+		guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+		return gregorian.date(byAdding: .day, value: 1, to: sunday)
+	}
+	
+	var endOfWeek: Date? {
+		let gregorian = Calendar(identifier: .gregorian)
+		guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+		return gregorian.date(byAdding: .day, value: 7, to: sunday)
 	}
 }
 

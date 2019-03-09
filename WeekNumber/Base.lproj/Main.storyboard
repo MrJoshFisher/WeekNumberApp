@@ -685,30 +685,94 @@
             <objects>
                 <viewController storyboardIdentifier="WeekNumberViewController" id="XfG-lQ-9wD" customClass="WeekNumberViewController" customModule="WeekNumber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="607"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField identifier="weekNumberTitle" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2tw-AR-wAK">
-                                <rect key="frame" x="-2" y="150" width="484" height="42"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Week 6" id="XMV-Rm-6QE">
-                                    <font key="font" metaFont="system" size="35"/>
+                            <textField identifier="weekRangeText" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YwR-iU-eFj">
+                                <rect key="frame" x="6" y="525" width="311" height="22"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="some text...." id="QVb-OU-XXk">
+                                    <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField identifier="weekRangeText" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwR-iU-eFj">
-                                <rect key="frame" x="-2" y="100" width="484" height="42"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="04/02/19 -&gt; 11/02/19 " id="QVb-OU-XXk">
-                                    <font key="font" metaFont="system" size="23"/>
+                            <scrollView ambiguous="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfl-gQ-F0W">
+                                <rect key="frame" x="0.0" y="38" width="323" height="479"/>
+                                <clipView key="contentView" ambiguous="YES" id="qGd-qI-amd">
+                                    <rect key="frame" x="1" y="0.0" width="321" height="478"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="eBk-VZ-yZp" viewBased="YES" id="qmH-da-TSC">
+                                            <rect key="frame" x="0.0" y="0.0" width="321" height="453"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn identifier="taskList" width="318" minWidth="40" maxWidth="1000" id="oAz-bD-q6X">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="PjU-v9-EnE">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="Abg-HU-1Fg">
+                                                            <rect key="frame" x="1" y="1" width="318" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="ASX-hE-6UD">
+                                    <rect key="frame" x="1" y="165" width="478" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="qa2-I0-f8o">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="eBk-VZ-yZp">
+                                    <rect key="frame" x="0.0" y="0.0" width="321" height="25"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                            <textField identifier="weekNumberTitle" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2tw-AR-wAK">
+                                <rect key="frame" x="6" y="551" width="311" height="46"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Week 6" id="XMV-Rm-6QE">
+                                    <font key="font" metaFont="systemBold" size="38"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXt-48-4XA">
-                                <rect key="frame" x="420" y="19" width="40" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RpT-jm-yEx">
+                                <rect key="frame" x="256" y="7" width="59" height="23"/>
+                                <buttonCell key="cell" type="roundTextured" title="Add" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MA1-4b-gDd">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAi-AJ-RS1">
+                                <rect key="frame" x="8" y="8" width="236" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="sXd-Xh-bBO"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" placeholderString="Enter task todo here...." drawsBackground="YES" id="vju-Av-1jL">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" verticalCompressionResistancePriority="751" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXt-48-4XA">
+                                <rect key="frame" x="275" y="562" width="40" height="23"/>
                                 <buttonCell key="cell" type="roundTextured" title="Quit" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="La1-9C-Q0m">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -717,50 +781,40 @@
                                     <action selector="quitApp:" target="XfG-lQ-9wD" id="epi-Ck-jvL"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJd-sd-AEO">
-                                <rect key="frame" x="18" y="22" width="89" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Show Time" bezelStyle="regularSquare" imagePosition="left" inset="2" id="DWa-mH-6vS">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="showTime:" target="XfG-lQ-9wD" id="aZX-Xm-kB4"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="POD-y4-67f">
-                                <rect key="frame" x="121" y="22" width="72" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="24 Hour" bezelStyle="regularSquare" imagePosition="left" inset="2" id="7Ti-6a-HDU">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="time24:" target="XfG-lQ-9wD" id="Qoz-Fd-vDR"/>
-                                </connections>
-                            </button>
-                            <button identifier="showFullDateCheck" verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-Zu-85T">
-                                <rect key="frame" x="204" y="22" width="108" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Show full date" bezelStyle="regularSquare" imagePosition="left" inset="2" id="N4p-lJ-agT">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="showFullDate:" target="XfG-lQ-9wD" id="MU6-Yd-YPJ"/>
-                                </connections>
-                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="YwR-iU-eFj" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="8" id="4RS-Md-DY3"/>
+                            <constraint firstItem="mfl-gQ-F0W" firstAttribute="top" secondItem="XXt-48-4XA" secondAttribute="bottom" constant="8" id="4cD-W7-v1X"/>
+                            <constraint firstItem="XXt-48-4XA" firstAttribute="top" secondItem="2tw-AR-wAK" secondAttribute="bottom" constant="4" id="4v1-WV-7qe"/>
+                            <constraint firstItem="2tw-AR-wAK" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="8" id="EUg-hX-Glz"/>
+                            <constraint firstAttribute="trailing" secondItem="2tw-AR-wAK" secondAttribute="trailing" constant="8" id="IIf-h9-5X0"/>
+                            <constraint firstItem="YwR-iU-eFj" firstAttribute="top" secondItem="2tw-AR-wAK" secondAttribute="bottom" constant="4" id="JYQ-D2-zia"/>
+                            <constraint firstAttribute="trailing" secondItem="RpT-jm-yEx" secondAttribute="trailing" constant="8" id="Lsu-tD-wN9"/>
+                            <constraint firstItem="mfl-gQ-F0W" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="TDt-Gc-IUD"/>
+                            <constraint firstItem="dAi-AJ-RS1" firstAttribute="top" secondItem="mfl-gQ-F0W" secondAttribute="bottom" constant="8" id="Xd6-Uu-3aw"/>
+                            <constraint firstAttribute="trailing" secondItem="YwR-iU-eFj" secondAttribute="trailing" constant="8" id="Z8W-c0-BGQ"/>
+                            <constraint firstAttribute="trailing" secondItem="mfl-gQ-F0W" secondAttribute="trailing" id="ezL-SW-ith"/>
+                            <constraint firstItem="RpT-jm-yEx" firstAttribute="top" secondItem="mfl-gQ-F0W" secondAttribute="bottom" constant="8" id="f6h-bq-qzW"/>
+                            <constraint firstAttribute="trailing" secondItem="XXt-48-4XA" secondAttribute="trailing" constant="8" id="lxH-pc-atK"/>
+                            <constraint firstAttribute="bottom" secondItem="dAi-AJ-RS1" secondAttribute="bottom" constant="8" id="q7T-8E-rgr"/>
+                            <constraint firstAttribute="bottom" secondItem="RpT-jm-yEx" secondAttribute="bottom" constant="8" id="rgl-GM-gPT"/>
+                            <constraint firstItem="RpT-jm-yEx" firstAttribute="leading" secondItem="dAi-AJ-RS1" secondAttribute="trailing" constant="12" id="skA-Od-rMB"/>
+                            <constraint firstItem="mfl-gQ-F0W" firstAttribute="top" secondItem="YwR-iU-eFj" secondAttribute="bottom" constant="8" id="wRk-V9-r0U"/>
+                            <constraint firstItem="dAi-AJ-RS1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="8" id="xYY-4o-xhN"/>
+                            <constraint firstItem="2tw-AR-wAK" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="yFr-Yq-1GE"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="popButton" destination="XXt-48-4XA" id="HT6-SF-dcB"/>
+                        <outlet property="taskAddBtn" destination="RpT-jm-yEx" id="A7K-lO-6h1"/>
+                        <outlet property="taskListTable" destination="qmH-da-TSC" id="HY5-pG-f1g"/>
                         <outlet property="weekNumberText" destination="2tw-AR-wAK" id="VYf-m2-Wbd"/>
                         <outlet property="weekRangeText" destination="YwR-iU-eFj" id="8Ep-HL-4Sl"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-4.5" y="823.5"/>
         </scene>
     </scenes>
 </document>

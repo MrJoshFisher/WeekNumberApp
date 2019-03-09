@@ -13,7 +13,7 @@ import ServiceManagement
 class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	
-	//let popover = NSPopover()
+	let popover = NSPopover()
 	let defaults = UserDefaults.standard
 	
 	var statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
@@ -34,22 +34,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			repeats: true
 		)
 		weekTimer.fire()
-		constructMenu()
+		//constructMenu()
 		
 		if let statItem = statusItem.button {
 			statItem.image = NSImage(named:NSImage.Name("CalendarImageButton"))
 			statItem.imagePosition = NSControl.ImagePosition.imageLeft
 			statItem.frame = CGRect(x: 0,y: -0.5, width: statItem.frame.width, height: statItem.frame.height)
-			//statItem.action = #selector(AppDelegate.togglePopover(_:))
+			statItem.action = #selector(AppDelegate.togglePopover(_:))
 		}
-		/*
+		
 		popover.contentViewController = WeekNumberViewController.freshController()
 		eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
 			if let strongSelf = self, strongSelf.popover.isShown {
 				strongSelf.closePopover(sender: event)
 			}
 		}
-		*/
+		
 		
 	}
 	
@@ -66,7 +66,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		//let seconds = calendar.component(.second, from: date)
 		self.statusItem.title = String(format: " W#%02d", weekOfYear);
 	}
-	/*
+	
 	@objc func togglePopover(_ sender: Any?) {
 		if popover.isShown {
 			closePopover(sender: sender)
@@ -86,7 +86,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		popover.performClose(sender)
 		eventMonitor?.stop()
 	}
-	*/
+	
 	
 	@IBAction func openAtLogin(_ sender: NSMenuItem) {
 		// TODO
