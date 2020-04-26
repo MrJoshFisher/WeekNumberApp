@@ -13,9 +13,3 @@ struct defaultsKeys {
 	static let showFullDateKey = "showFullDate"
 	static let showTimeKey = "showTime"
 }
-
-class ExtraFunctions {
-	
-	
-	
-}

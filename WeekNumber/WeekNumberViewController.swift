@@ -16,7 +16,6 @@ class WeekNumberViewController: NSViewController {
 
 	@IBOutlet var popButton: NSButton!
 	
-	var extraFuncs = ExtraFunctions()
 	
 	let defaults = UserDefaults.standard
 	
