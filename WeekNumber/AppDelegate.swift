@@ -12,17 +12,11 @@ import ServiceManagement
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	
-	
-	let popover = NSPopover()
-	let defaults = UserDefaults.standard
-	
 	var statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
 	var weekTimer = Timer()
 	var eventMonitor: EventMonitor?
 	
-	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// Insert code here to initialize your application
 		constructMenu();
 		
 		self.weekTimer = Timer.scheduledTimer(
@@ -47,10 +41,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let calendar = Calendar.current;
 		let weekOfYear = calendar.component(.weekOfYear, from: date);
 		self.statusItem.button!.title = String(format: " W#%02d", weekOfYear);
-	}
-	
-	func applicationWillTerminate(_ aNotification: Notification) {
-		// Insert code here to tear down your application
 	}
 	
 	func constructMenu() {
