@@ -46,13 +46,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let date = Date();
 		let calendar = Calendar.current;
 		let weekOfYear = calendar.component(.weekOfYear, from: date);
-		//let year = calendar.component(.year, from: date)
-		//let month = calendar.component(.month, from: date)
-		//let day = calendar.component(.day, from: date)
-		//let hour = calendar.component(.hour, from: date)
-		//let min = calendar.component(.minute, from: date)
-		//let weekOfMonth = calendar.component(.weekOfMonth, from: date)
-		//let seconds = calendar.component(.second, from: date)
 		self.statusItem.button!.title = String(format: " W#%02d", weekOfYear);
 	}
 	

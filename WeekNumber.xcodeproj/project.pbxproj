@@ -8,18 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		031FB8A22457BB570060596D /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 031FB8A12457BB570060596D /* readme.md */; };
-		0374836C220A492700841BFD /* ExtraFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374836B220A492700841BFD /* ExtraFunctions.swift */; };
 		0374836E220A515400841BFD /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374836D220A515400841BFD /* EventMonitor.swift */; };
 		037ECC0A22079019007CB97C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037ECC0922079019007CB97C /* AppDelegate.swift */; };
 		037ECC0C22079019007CB97C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037ECC0B22079019007CB97C /* ViewController.swift */; };
 		037ECC112207901A007CB97C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037ECC0F2207901A007CB97C /* Main.storyboard */; };
 		03E1C60F2207AB77005C4E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E1C60E2207AB77005C4E59 /* Assets.xcassets */; };
-		03E1C6112207B1F4005C4E59 /* WeekNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E1C6102207B1F4005C4E59 /* WeekNumberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		031FB8A12457BB570060596D /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
-		0374836B220A492700841BFD /* ExtraFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraFunctions.swift; sourceTree = "<group>"; };
 		0374836D220A515400841BFD /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		037ECC0622079019007CB97C /* WeekNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeekNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037ECC0922079019007CB97C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +27,6 @@
 		03997C1E2214A60900892781 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		03997C202214A61500892781 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		03E1C60E2207AB77005C4E59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		03E1C6102207B1F4005C4E59 /* WeekNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekNumberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +62,11 @@
 			isa = PBXGroup;
 			children = (
 				03E1C60E2207AB77005C4E59 /* Assets.xcassets */,
-				03E1C6102207B1F4005C4E59 /* WeekNumberViewController.swift */,
 				037ECC0922079019007CB97C /* AppDelegate.swift */,
 				037ECC0B22079019007CB97C /* ViewController.swift */,
 				037ECC0F2207901A007CB97C /* Main.storyboard */,
 				037ECC122207901A007CB97C /* Info.plist */,
 				037ECC132207901A007CB97C /* WeekNumber.entitlements */,
-				0374836B220A492700841BFD /* ExtraFunctions.swift */,
 				0374836D220A515400841BFD /* EventMonitor.swift */,
 			);
 			path = WeekNumber;
@@ -158,9 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0374836C220A492700841BFD /* ExtraFunctions.swift in Sources */,
 				0374836E220A515400841BFD /* EventMonitor.swift in Sources */,
-				03E1C6112207B1F4005C4E59 /* WeekNumberViewController.swift in Sources */,
 				037ECC0C22079019007CB97C /* ViewController.swift in Sources */,
 				037ECC0A22079019007CB97C /* AppDelegate.swift in Sources */,
 			);
